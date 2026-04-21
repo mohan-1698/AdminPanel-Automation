@@ -16,5 +16,13 @@
             <class name="com.mock.hackathon.AdminPanel.tests.AlertTest"/>
         </classes>
     </test>
+    
+    
+    <!-- Dynamic Tests -->
+    <test name="Alert Tests">
+        <classes>
+            <class name="com.mock.hackathon.AdminPanel.tests.DynmicTest"/>
+        </classes>
+    </test>
 
 </suite>
