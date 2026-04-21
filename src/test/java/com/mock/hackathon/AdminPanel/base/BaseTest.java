@@ -1,38 +1,24 @@
 package com.mock.hackathon.AdminPanel.base;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.*;
 
-/**
- * Unit test for simple App.
- */
-public class BaseTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public BaseTest( String testName )
-    {
-        super( testName );
+import com.mock.hackathon.AdminPanel.factory.DriverFactory;
+import com.mock.hackathon.AdminPanel.utils.ConfigReader;
+
+public class BaseTest {
+
+    protected WebDriver driver;
+
+    @BeforeMethod
+    public void setUp() {
+        DriverFactory.initDriver();
+        driver = DriverFactory.getDriver();
+        driver.get(ConfigReader.getProperty("baseUrl"));
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( BaseTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    @AfterMethod
+    public void tearDown() {
+        DriverFactory.quitDriver();
     }
 }
