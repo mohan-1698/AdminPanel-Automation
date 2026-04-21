@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="AdminPanel Suite" parallel="tests" thread-count="3">
+<suite name="AdminPanel Suite" parallel="tests" thread-count="5">
 
-    <!-- Form Tests -->
+    <listeners>
+        <listener class-name="com.mock.hackathon.AdminPanel.listeners.TestListener"/>
+    </listeners>
+
     <test name="Form Tests">
         <classes>
             <class name="com.mock.hackathon.AdminPanel.tests.FormTest"/>
         </classes>
     </test>
 
-    <!-- Alert Tests -->
     <test name="Alert Tests">
         <classes>
             <class name="com.mock.hackathon.AdminPanel.tests.AlertTest"/>
         </classes>
     </test>
-    
-    
-    <!-- Dynamic Tests -->
-    <test name="Alert Tests">
+
+    <test name="Dynamic Tests">
         <classes>
-            <class name="com.mock.hackathon.AdminPanel.tests.DynmicTest"/>
+            <class name="com.mock.hackathon.AdminPanel.tests.DynamicTest"/>
         </classes>
     </test>
 
