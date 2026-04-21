@@ -3,13 +3,12 @@ package com.mock.hackathon.AdminPanel.tests;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.mock.hackathon.AdminPanel.base.BaseTest;
 import com.mock.hackathon.AdminPanel.pages.FormPage;
 
 public class FormTest extends BaseTest {
 
-    // ✅ 1. Fill form & verify username output
+   
     @Test(dataProvider = "formData")
     public void testFormSubmission(String user, String pass, String comment, String dropdownValue) {
 
@@ -23,7 +22,7 @@ public class FormTest extends BaseTest {
                 "Username validation failed");
     }
 
-    // ✅ 2. Dropdown validation
+
     @Test(dataProvider = "formData")
     public void testDropdownSelection(String user, String pass, String comment, String dropdownValue) {
 
@@ -37,7 +36,7 @@ public class FormTest extends BaseTest {
                 "Dropdown validation failed");
     }
 
-    // ✅ 3. Radio + Checkbox validation
+  
     @Test(dataProvider = "formData")
     public void testRadioAndCheckboxSelection(String user, String pass, String comment, String dropdownValue) {
 
